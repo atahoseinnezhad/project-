@@ -236,3 +236,48 @@
 
 
 
+
+
+
+
+// const fs = require ('fs');
+
+
+// fs.writeFile('myfil.txt', ' سلام گل های تو خونه مهندس ها ینمومه ',()=>{
+// console.log(' this write file ');
+// })
+
+// fs.appendFile('myfil.txt','\nim new line in cuorse ',()=>{
+//     console.log(' this apend file');
+    
+// })
+// fs.appendFile('myfil.txt','\nim last line ',()=>{
+
+// console.log('2main apend file ')
+
+
+// })
+
+
+// fs.rmdir('new folder',(err)=>{
+//     if (err){
+//     console.log(' this error ');
+//     }
+//     console.log(' created folder name new folder ');
+// })
+
+
+// fs.mkdir('new folder',(err)=>{
+//     if (err){
+//     console.log(' this error ');
+//     }
+//     console.log(' created folder name new folder ');
+// })
+
+// fs.rmdir('new folder',(err)=>{
+//     if (err){
+//     console.log(' this error ');
+//     }
+//     console.log(' created folder name new folder ');
+// })
+

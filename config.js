@@ -1,3 +1,2 @@
-module.exports = {
-  port: 3000
-};
+const result = require("./node")
+console.log(result);
