@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کارت معرفی</title>
+  <style>body {
+    font-family: 'Tahoma', sans-serif; /* فونت نوشته‌ها */
+    background-color: #f4f4f4; /* رنگ پس‌زمینه خاکستری روشن */
+    display: flex;
+    justify-content: center; /* وسط چین کردن کارت */
+    align-items: center; /* وسط چین کردن عمودی */
+    min-height: 100vh; /* حداقل ارتفاع صفحه */
+    margin: 0;
+}
+
+/* استایل کارت اصلی */
+.card {
+    background-color: #ffffff; /* رنگ سفید داخل کارت */
+    border-radius: 15px; /* گوشه‌های گرد */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* سایه برای برجسته شدن */
+    overflow: hidden; /* برای اینکه محتویات بیرون نزنه */
+    width: 350px; /* عرض کارت */
+    text-align: center; /* همه چیز داخل کارت وسط چین */
+    border: 1px solid #ddd; /* یه کادر نازک دور کارت */
+}
+
+/* استایل عکس */
+.card-image {
+    width: 100%; /* عکس کل عرض کارت رو بگیره */
+    height: 200px; /* ارتفاع عکس */
+    object-fit: cover; /* عکس رو طوری تنظیم کنه که همه جا رو بپوشونه بدون اینکه کج و کوله بشه */
+    display: block; /* برای حذف فضای خالی اضافه زیر عکس */
+}
+
+/* استایل محتوای داخل کارت (اسم، توضیحات، دکمه) */
+.card-content {
+    padding: 20px; /* فاصله از لبه‌های کارت */
+}
+
+/* استایل اسم */
+.card-name {
+    font-size: 1.8em; /* اندازه فونت اسم */
+    font-weight: bold; /* پررنگ کردن اسم */
+    color: #333; /* رنگ تیره برای اسم */
+    margin-bottom: 10px; /* فاصله زیر اسم */
+}
+
+/* استایل توضیحات */
+.card-description {
+    font-size: 1em; /* اندازه فونت توضیحات */
+    color: #666; /* رنگ خاکستری برای توضیحات */
+    line-height: 1.6; /* فاصله بین خطوط */
+    margin-bottom: 20px; /* فاصله زیر توضیحات */
+}
+
+/* استایل دکمه */
+.contact-button {
+    background-color: #007bff; /* رنگ آبی برای دکمه */
+    color: white; /* رنگ سفید متن دکمه */
+    border: none; /* بدون کادر */
+    padding: 12px 25px; /* اندازه دکمه */
+    border-radius: 5px; /* گوشه‌های گرد دکمه */
+    font-size: 1em; /* اندازه فونت دکمه */
+    cursor: pointer; /* نشون می‌ده که قابل کلیک کردنه */
+    transition: background-color 0.3s ease; /* نرم شدن تغییر رنگ موقع هاور */
+}
+
+/* افکت موقع رفتن موس روی دکمه */
+.contact-button:hover {
+    background-color: #0056b3; /* آبی تیره‌تر */
+}</style>
+    <link rel="stylesheet" href="style.css"> <!-- اینجا فایل CSS رو وصل می‌کنیم -->
+</head>
+<body>
+
+<div class="card">
+    <img src="download.jfif" alt="عکس حسین حسین‌نژاد" class="card-image"> <!-- اینجا عکس رو قرار می‌دیم -->
+    <div class="card-content">
+        <h2 class="card-name">حسین حسین‌نژاد</h2> <!-- اسم پررنگ -->
+        <p class="card-description">من به طراحی وب برنامه نویسی و یادگیری تکنولوزی های جدید علاقه دارم</p> <!-- توضیحات -->
+        <button class="contact-button">تماس با من</button> <!-- دکمه -->
+    </div>
+</div>
+
+</body>
+</html>

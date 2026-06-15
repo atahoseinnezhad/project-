@@ -281,3 +281,51 @@
 //     console.log(' created folder name new folder ');
 // })
 
+
+
+// fs.unlink('sher.html',(err)=>{
+//     console.log(err);
+// })
+// // console.log(' file shoma del it ');
+
+
+
+
+
+
+
+// const http = require('http');
+// const fs = require ('fs');
+
+
+// const server = http.createServer((req,res)=>{
+// fs.readFile('myile.txt', (err , data) =>{
+//     if (err){
+//         console.log(err);
+//     }
+//     else {
+//         res.write(data)
+//   res.end()
+//     }
+
+// }) 
+// })
+// server.listen(3000,'localhost',()=>{
+
+
+//     console.log('listening for request on port 3000');
+// })
+
+const app = express();
+const express = require ('express');
+app.use(express.static('js'))
+
+
+
+
+app.get('/', (req, res) => {
+  res.send('<h1>Welcome to my website!</h1><script src="/script.js"></script>');
+});
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});

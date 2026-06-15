@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> تور اینجا  </title>
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Tahoma, sans-serif;
+    background: #f5f5f5;
+    line-height: 1.8;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  /* هدر */
+  .header-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  /* منو */
+  .menu {
+    background-color: #333;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    direction: rtl;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  .menu > a,
+  .dropdown > a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .menu > a:hover,
+  .dropdown > a:hover {
+    background: #444;
+    border-radius: 4px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    background-color: #444;
+    min-width: 160px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 10px 14px;
+    color: #fff;
+    text-decoration: none;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .dropdown-content a:hover {
+    background: #555;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* بنر خوش آمد */
+  .hero {
+    background: linear-gradient(to left, #ffecd2, #fcb69f);
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    background: #e67e22;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .btn:hover {
+    background: #cf711f;
+  }
+
+  /* ساعت */
+  .clock-box {
+    background: white;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1100px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-size: 20px;
+    color: #333;
+  }
+
+  /* اسلایدر */
+  .slider {
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    background: white;
+  }
+
+  .slider img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+
+  /* محصولات */
+  .products {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #222;
+  }
+
+  .product-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .product {
+    background: white;
+    width: 300px;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .product h3 {
+    margin: 12px 0;
+    color: #333;
+  }
+
+  .product p {
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .price {
+    color: #e74c3c;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  /* ابزارها */
+  .tools {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .tools button {
+    margin: 8px;
+  }
+
+  /* فرم */
+  .newsletter {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .newsletter input {
+    width: 60%;
+    max-width: 400px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin: 10px;
+  }
+
+  /* نظرات */
+  .comments {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .comment {
+    background: #f9f9f9;
+    padding: 12px;
+    border-right: 4px solid #e67e22;
+    margin: 10px 0;
+    border-radius: 6px;
+  }
+
+  /* فوتر */
+  footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  /* دکمه بالا */
+  #topBtn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: none;
+    background: #e67e22;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  #topBtn:hover {
+    background: #cf711f;
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- تصویر بالای سایت -->
+  <img src="1.jpg" class="header-image" alt="تصویر فروشگاه">
+
+  <!-- منو -->
+  <div class="menu">
+    <a href="#">خانه</a>
+    <div class="dropdown">
+    <a href="#">تورهای داخلی▾   </a>
+     <div class="dropdown-content">
+        <a href="tab.html">تبریز </a>
+        <a href="maz.html">مازندران </a>
+        <a href="gil.html">گیلان </a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#"> تورهای خارجی ▾</a>
+      <div class="dropdown-content">
+        <a href="swis.html">سوییس</a>
+        <a href="dan.html"> دانمارک </a>
+        <a href="amaz.html">امازون</a>
+      </div>
+    </div>
+
+
+
+    <div class="dropdown">
+      <a href="#">درباره ما ▾</a>
+      <div class="dropdown-content">
+        <a href="#">تاریخچه</a>
+        <a href="#">ماموریت</a>
+    <a href="#">تماس با ما</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- خوش آمدگویی -->
+  <section class="hero">
+    <h1>به مجموعه گردشگری و مسافری تور اینجا خوش امدید </h1>
+    <p>ثبت نام کن تا از دستش ندادی طبیعتو </p>
+    <button class="btn" onclick="showMessage()">برات سوپرایز دارم </button>
+  </section>
+
+  <!-- ساعت -->
+  <div class="clock-box">
+    <p>ساعت و تاریخ فعلی:</p>
+    <h2 id="clock"></h2>
+  </div>
+
+  <!-- اسلایدر -->
+  <div class="slider">
+    <img id="slider" src="18.jpg" alt="اسلایدر سایت">
+  </div>
+
+  <div>
+<img src="6357585.gif" alt="" , style=" justify-content: center;  width: 1100px;" > <img src="roshd468x60.gif" alt=""  style="width: 1000px; height: auto ," ><img src="borhan-system.gif" alt="" , style="justify-content: center; width: 1000px;"><img src="Jambojet-728×90.gif" alt="", style="justify-content: center; width: 1000px;">
+
+
+
+
+
+  </div>
+  <!-- محصولات -->
+  <section class="products">
+    <h2 class="section-title"> تور های اقتصادی </h2>
+    <div class="product-container">
+      <div class="product">
+        <img src="70.jpg" alt="چابهار ">
+        <h3> ساحل دریا بزرگ</h3>
+        <p>استان سیستان و بلوچستان، شهرستان چابهار، رمین، امتداد خیابان کارگر </p>
+        <div class="price">6,800,000 تومان</div>
+        <button class="btn" onclick="buyProduct('ساحل دریا بزرگ   ')">ثبت نام </button>
+      </div>
+
+      <div class="product">
+        <img src="2024-02-09 15.19.jpg" alt="محصول 2">
+        <h3>قلعه رودخان   </h3>
+        <p>  استان گیلان، ۲۰ کیلومتری جنوب غربی فومن، بالای روستای رودخان</p>
+        <div class="price">3,500,000 تومان</div>
+        <button class="btn" onclick="buyProduct('قلعه تاریخی رودخان ')">ثبت نام </button>
+      </div>
+
+      <div class="product">
+        <img src="Do-hezar-se-hezar-jungles.webp" alt="محصول 3">
+        <h3>جنگل دوهزار سه هزار </h3>
+        <p>: استان مازندران، نزدیکی عباس‌آباد، 5 کیلومتری شمال شرقی تنکابن</p>
+        <div class="price">2,200,000 تومان</div>
+        <button class="btn" onclick="buyProduct('جنگل دوهزار سه هزار ')">ثبت نام </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ابزارهای جاوااسکریپتی -->
+  <section class="tools">
+    <h2 class="section-title">امکانات سایت</h2>
+    <button class="btn" onclick="changeBackground()">تغییر رنگ پس‌زمینه</button>
+    <button class="btn" onclick="changeTitle()">تغییر عنوان صفحه</button>
+    <button class="btn" onclick="showWelcome()">نمایش پیام خوش‌آمد</button>
+  </section>
+
+  <!-- خبرنامه -->
+  <section class="newsletter">
+    <h2 class="section-title">عضویت در خبرنامه</h2>
+    <p>برای دریافت جدیدترین تخفیف‌ها ایمیل خود را وارد کنید</p>
+    <input type="text" id="email" placeholder="ایمیل خود را وارد کنید">
+    <br>
+    <button class="btn" id="subscribeBtn">عضویت</button>
+    <p id="result" style="margin-top:15px; color:green; font-weight:bold;"></p>
+  </section>
+
+  <!-- نظرات کاربران -->
+  <section class="comments">
+    <h2 class="section-title"> نظرات  گردشگران </h2>
+    <div class="comment">خیلی با احترام برخورد کردن .</div>
+    <div class="comment">قیمت های خیلی مناسبی نسبت به سایت های دیگه دارن .</div>
+    <div class="comment">تور لیدر  ماهر و با تجربه ای استخدام کردن </div>
+  </section>
+
+  <!-- فوتر -->
+  <footer>
+    <p>© تمامی حقوق این سایت محفوظ است | فروشگاه آنلاین</p>
+  </footer>
+
+  <!-- دکمه رفتن به بالا -->
+  <button id="topBtn" onclick="goTop()">↑</button>
+
+<script>
+  // 1) پیام خوش آمد
+  function showMessage() {
+    alert("تخفیف ویژه امروز: 20 درصد تخفیف برای  اولین سفرت !");
+  }
+
+  // 2) خرید محصول
+  function buyProduct(productName) {
+    alert("شما ثبت نام  " + productName + " را انتخاب کردید.");
+  }
+
+  // 3) تغییر رنگ پس زمینه
+  function changeBackground() {
+    let colors = ["#f5f5f5", "#eaf6ff", "#fff3e0", "#f0fff0", "#fce4ec"];
+    let randomColor = colors[Math.floor(Math.random() * colors.length)];
+    document.body.style.background = randomColor;
+  }
+
+  // 4) تغییر عنوان
+  function changeTitle() {
+    document.title = "تور گردشگری ";
+    alert("عنوان صفحه تغییر کرد");
+  }
+
+  // 5) نمایش پیام خوش آمد
+  function showWelcome() {
+    let name = prompt("اسم خوشگلتو بنویس :");
+    if (name) {
+      alert(name + " به به خوش اومدی عزیز دل ");
+    }
+  }
+
+  // 6) ساعت زنده
+  function updateClock() {
+    let now = new Date();
+    document.getElementById("clock").textContent = now.toLocaleString("fa-IR");
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // 7) اسلایدر
+  let images = ["2.jpg", "3.jpg", "4.jpg", "5.jpg"];
+  let index = 0;
+
+  function changeSlide() {
+    index++;
+    if (index >= images.length) {
+      index = 0;
+    }
+    document.getElementById("slider").src = images[index];
+  }
+  setInterval(changeSlide, 3000);
+
+  // 8) فرم عضویت
+  document.getElementById("subscribeBtn").addEventListener("click", function() {
+    let email = document.getElementById("email").value;
+    let result = document.getElementById("result");
+
+    if (email === "") {
+      result.style.color = "red";
+      result.textContent = "بی زحمت ایمیل خودتون رو وارد کنید ";
+    } else {
+      result.style.color = "green";
+      result.textContent = "عضویت شما با موفقیت انجام شد";
+    }
+  });
+
+  // 9) دکمه رفتن به بالا
+  window.onscroll = function() {
+    let btn = document.getElementById("topBtn");
+    if (document.documentElement.scrollTop > 200) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  function goTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+</script>
+
+</body>
+</html>
