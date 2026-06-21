@@ -38,16 +38,39 @@
 # print (str(s)+sec );
 
 
-# # 
-# /.وظ یر <>إظ< د<> زسةّء ذمسبیئ
-# کلمئ
-# کمسبئلدکشبلد
 
-# مئوبلد و
-# کبل
-# گبئولد /.وگب
-# لددکئم
-# دد
-# بلگد 
-# مبرلذ
-# # دبد  
+# number = int(input(" enter a nbumber : "))
+# if number % 2 == 0:
+#     print("zoj ")
+# else:
+#     print("fard ")
+
+
+
+# adad = int(input(' number enter kon '))
+# if 20>=adad>=17:
+#     print('momtaz shodi ')
+# elif 16>=adad>=10:
+#     print('bad nabodi ')
+# else :
+#     print('ridi')
+
+
+
+# for i in range(1, 11):
+#     print(i)
+
+
+
+# a=str(input(''))
+# print(len(a))
+
+
+
+# people =(('ata',18),('momsom',55),('amo esa ',56),('memraj',30))
+# for name , son in people :
+#  print(f"{name} is {son} years old ") 
+# «در این بخش، people یک تاگل (Tuple) است. حلقه for مقادیر name و son را از داخل people دریافت می‌کند. سپس این مقادیر را پردازش کرده و در نهایت نتیجه را دوباره در people قرار می‌دهد. بعد از آن با استفاده از print خروجی را نمایش می‌دهیم.»
+
+
+
