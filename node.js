@@ -74,7 +74,7 @@
 // const fs = require('fs');
 // console.log('start of bloocking code ');
 // const data = fs.readFileSync('myfile.txt',  'utf8');
-// console.log(' bloocking operation completed');
+// console.log(' bloocking operation انجام شده ');
 
 
 // console.log( 'start of non bloocking code ');
@@ -171,7 +171,7 @@
 
 // function someAsyncOperation() {
 //   return new Promise(resolve => {
-//     setTimeout(() => resolve('Operation completed'), 1000);
+//     setTimeout(() => resolve('Operation انجام شده '), 1000);
 //   });
 // }
 
